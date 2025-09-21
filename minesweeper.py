@@ -1,6 +1,10 @@
 import random
 
 
+def affichage ():
+    for row in tableau_affichage :
+        print(row)
+
 tableau_data = [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0],
@@ -18,3 +22,5 @@ tableau_affichage = [
     [0,0,0,0,0,0,0,0,0,0],
     [0,0,0,0,0,0,0,0,0,0]
 ]
+
+affichage()
