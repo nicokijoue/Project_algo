@@ -1,9 +1,10 @@
 import random
 
 
-def affichage ():
-    for nbr_ligne in tableau_affichage :
-        print(nbr_ligne)
+def affichage():
+    for nbr_ligne in tableau_affichage:
+        ligne_affichage = ' '.join(str(case) for case in nbr_ligne)
+        print(ligne_affichage)
 
 
 def aléatoire (tableau_data, nbr_mines):
