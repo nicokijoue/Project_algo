@@ -35,10 +35,17 @@ def gameplay(tableau_data):
     while True:
         ligne, colonne = coordonnée()
         counter = 0
+
+        if tableau_affichage[ligne][colonne] != "?":
+            print("Vous conaissez déjà la case voyons !")
+            continue
+
         if tableau_data[ligne][colonne] == 1:
             print("Vous êtes tomber sur une Mine! pas de chance.")
-            break
-        else :
+            tableau_affichage[ligne][colonne] = "💣"
+            affichage()
+            break 
+        else : 
             for i in range(-1, 2):  
                 for j in range(-1, 2):  
                     if i == 0 and j == 0:  
@@ -51,6 +58,8 @@ def gameplay(tableau_data):
                         0 <= colonne_autour < nbr_colonne and 
                         tableau_data[ligne_autour][colonne_autour] == 1):
                         counter += 1
+            tableau_affichage[ligne][colonne] = counter
+            affichage()
 
 
 tableau_data = [
