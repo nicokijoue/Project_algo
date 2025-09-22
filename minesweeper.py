@@ -6,13 +6,13 @@ def affichage ():
         print(nbr_ligne)
 
 
-def aléatoire (tableau, nbr_mines):
+def aléatoire (tableau_data, nbr_mines):
     positions_prises = []
     while len(positions_prises) < nbr_mines:
         i = random.randint(0, 9)  
         j = random.randint(0, 9) 
         if (i, j) not in positions_prises:
-            tableau[i][j] = 1
+            tableau_data[i][j] = 1
             positions_prises.append((i, j))
 
 
