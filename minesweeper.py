@@ -16,6 +16,17 @@ def aléatoire (tableau, nbr_mines):
             positions_prises.append((i, j))
 
 
+def victoire(nbr_mines):
+    cases_cachées = 0
+    
+    for ligne in tableau_affichage:
+        for case in ligne:
+            if case == "?":
+                cases_cachées += 1
+    
+    return cases_cachées == nbr_mines
+
+
 def coordonnée():
     while True:
         try:
@@ -29,7 +40,7 @@ def coordonnée():
             print("veuillez enter un nombre et non autre chose.")
 
 
-def gameplay(tableau_data):
+def gameplay(tableau_data,nbr_mines):
     nbr_ligne = len(tableau_data)
     nbr_colonne = len(tableau_data[0])
     while True:
@@ -61,6 +72,9 @@ def gameplay(tableau_data):
             tableau_affichage[ligne][colonne] = counter
             affichage()
 
+            if victoire(nbr_mines):
+                print("Victoire !")
+                break
 
 tableau_data = [
     [0,0,0,0,0,0,0,0,0,0],
