@@ -101,3 +101,9 @@ tableau_affichage = [
     ["?","?","?","?","?","?","?","?","?","?"],
     ["?","?","?","?","?","?","?","?","?","?"]
 ]
+
+
+# pour commencer le jeux
+nbr_mines = 20
+aléatoire(tableau_data, nbr_mines)
+gameplay(tableau_data, nbr_mines)
