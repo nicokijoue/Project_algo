@@ -2,8 +2,8 @@ import random
 
 
 def affichage ():
-    for ligne in tableau_affichage :
-        print(ligne)
+    for nbr_ligne in tableau_affichage :
+        print(nbr_ligne)
 
 
 def aléatoire (tableau, nbr_mines):
@@ -27,6 +27,30 @@ def coordonnée():
                 print("veuillez mettre un nombre entre 0-9 (0 et 9 comprit)")
         except ValueError:
             print("veuillez enter un nombre et non autre chose.")
+
+
+def gameplay(tableau_data):
+    nbr_ligne = len(tableau_data)
+    nbr_colonne = len(tableau_data[0])
+    while True:
+        ligne, colonne = coordonnée()
+        counter = 0
+        if tableau_data[ligne][colonne] == 1:
+            print("Vous êtes tomber sur une Mine! pas de chance.")
+            break
+        else :
+            for i in range(-1, 2):  
+                for j in range(-1, 2):  
+                    if i == 0 and j == 0:  
+                        continue
+
+                    ligne_autour = ligne + i
+                    colonne_autour = colonne + j
+                
+                    if (0 <= ligne_autour < nbr_ligne and 
+                        0 <= colonne_autour < nbr_colonne and 
+                        tableau_data[ligne_autour][colonne_autour] == 1):
+                        counter += 1
 
 
 tableau_data = [
